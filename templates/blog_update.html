@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+
+<!-- Formulario -->
+<form method="POST">
+    <!-- token -->
+    {% csrf_token %}
+    <!-- Traer context de BlogCreateView -->
+    title{{form.title}}
+    <br>
+    <!--! Descriptions -->
+    content{{form.content}}
+    <button type="submit">Update</button>
+</form>
+
+
+</body>
+</html>
