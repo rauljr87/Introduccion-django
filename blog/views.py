@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.base import View
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, DetailView
 from .forms import PostCreateForm
 # Para crear Post declarado en el modelo
 from .models import Post
@@ -81,3 +81,11 @@ class BlogUpdateView(UpdateView):
     def get_success_url(self):
         pk = self.kwargs['pk']
         return reverse_lazy('blog:detail', kwargs={'pk': pk})
+
+
+class BlogDeleteView(DetailView):
+    """ Elimina un post """
+
+    model = Post
+    template_name = 'blog_delete.html'
+    success_url = reverse_lazy('blog:home')

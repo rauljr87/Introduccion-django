@@ -5,6 +5,7 @@
     <title>Blog_list</title>
 </head>
 <body>
+
 Blog_list
 <br>
 <!-- Enlista modelos de la base de datos -->
@@ -12,7 +13,9 @@ Blog_list
 <!-- url '<int:pk>/' -->
 <a href="{% url 'blog:detail' post.id %}">{{post.title}}</a>
 {%endfor%}
+
 <br>
 <a href="{% url 'blog:create' %}">Create</a>
+
 </body>
 </html>
