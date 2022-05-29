@@ -1,6 +1,8 @@
+# Class-based generic views
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.base import View
-from django.views.generic import UpdateView, DetailView
+from django.views.generic import UpdateView, DeleteView
 from .forms import PostCreateForm
 # Para crear Post declarado en el modelo
 from .models import Post
@@ -83,7 +85,7 @@ class BlogUpdateView(UpdateView):
         return reverse_lazy('blog:detail', kwargs={'pk': pk})
 
 
-class BlogDeleteView(DetailView):
+class BlogDeleteView(DeleteView):
     """ Elimina un post """
 
     model = Post
