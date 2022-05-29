@@ -4,6 +4,8 @@ from django.views.generic import UpdateView
 from .forms import PostCreateForm
 # Para crear Post declarado en el modelo
 from .models import Post
+# Para redireccionar vista de update
+from django.urls import reverse_lazy
 
 
 # Indice del blog
@@ -61,7 +63,7 @@ class BlogDetailView(View):
     def get(self, request, pk, *args, **kwargs):
         """ Muestra detalle de un solo Post a través de su pk"""
 
-        post = get_object_or_404(Post, pk = pk)
+        post = get_object_or_404(Post, pk=pk)
         context = {
             'post': post
         }
@@ -69,5 +71,13 @@ class BlogDetailView(View):
 
 
 class BlogUpdateView(UpdateView):
+    """ Actualiza un post """
+
     model = Post
     fields = ['title', 'content']
+    template_name = 'blog_update.html'
+
+    # Redireccionando a blog_list
+    def get_success_url(self):
+        pk = self.kwargs['pk']
+        return reverse_lazy('blog:detail', kwargs={'pk': pk})
