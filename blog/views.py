@@ -62,6 +62,6 @@ class BlogDetailView(View):
 
         post = get_object_or_404(Post, pk = pk)
         context = {
-            'post':post
+            'post': post
         }
         return render(request, 'blog_detail.html', context)
