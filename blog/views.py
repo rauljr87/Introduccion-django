@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.base import View
+from django.views.generic import UpdateView
 from .forms import PostCreateForm
 # Para crear Post declarado en el modelo
 from .models import Post
@@ -65,3 +66,8 @@ class BlogDetailView(View):
             'post': post
         }
         return render(request, 'blog_detail.html', context)
+
+
+class BlogUpdateView(UpdateView):
+    model = Post
+    fields = ['title', 'content']
