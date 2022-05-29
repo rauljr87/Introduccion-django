@@ -31,11 +31,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # Importante protegerlo para evitar el acceso a nuestro sitio
 # Crear archivo .env para escribir todas las variables que sean sensibles passwords por ejemplos
-# Instalar paquete djangoenviron
-SECRET_KEY = 'django-insecure-=z_vg-hcr&^i03zk+n0e2&-(rcy*kaizm)&ob8=j+ih$gszpek'
+# Instalar paquete django-environ
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG')
 
 # Hosts permitidos, '*' todos
 ALLOWED_HOSTS = ['*']
