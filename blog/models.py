@@ -5,6 +5,9 @@ from django.db import models
 # Create your models here.
 # Cada vez que se hace un cambio en este archivo debemos generar una nueva migración
 class Post(models.Model):
+    """ Genera POST de título y contenido """
+
+    # Declaración de campos
     title = models.CharField(max_length=250)
     # Contenido ilimitado
     content = models.TextField()
