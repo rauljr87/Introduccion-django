@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+
+# Declarando variable environ
+env = environ.Env()
+# Para poder leer las variables de environ
+environ.Env.read_env()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR, hace referencia a donde se encuentra el directorio de nuestro archivo django
@@ -23,7 +30,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Importante protegerlo para evitar el acceso a nuestro sitio
-
+# Crear archivo .env para escribir todas las variables que sean sensibles passwords por ejemplos
+# Instalar paquete djangoenviron
 SECRET_KEY = 'django-insecure-=z_vg-hcr&^i03zk+n0e2&-(rcy*kaizm)&ob8=j+ih$gszpek'
 
 # SECURITY WARNING: don't run with debug turned on in production!
