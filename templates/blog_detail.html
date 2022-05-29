@@ -5,10 +5,13 @@
     <title>Blog_detail</title>
 </head>
 <body>
+    {% extends 'base.html' %}
 
-{{post.title}}
-<br>
-{{post.content}}
+    {% block content %}
+    {{post.title}}
+    <br>
+    {{post.content}}
+    {% endblock content %}
 
 </body>
 </html>

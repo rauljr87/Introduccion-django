@@ -5,13 +5,16 @@
     <title>Blog_delete</title>
 </head>
 <body>
+    {% extends 'base.html' %}
 
-Are you sure?
-<form method="POST">
-  {% csrf_token %}
-  {{form}}
-  <button type="submit">Delete</button>
-</form>
+    {% block content %}
+    Are you sure?
+    <form method="POST">
+      {% csrf_token %}
+      {{form}}
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" type="submit">Delete</button>
+    </form>
+    {% endblock content %}
 
 </body>
 </html>

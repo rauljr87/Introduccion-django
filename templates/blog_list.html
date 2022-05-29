@@ -18,7 +18,8 @@
     <a href="{% url 'blog:delete' post.id %}">Delete</a>
     {% endfor %}
     <br>
-    <a href="{% url 'blog:create' %}">Create</a>
+    <br>
+    <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="{% url 'blog:create' %}">Create</a>
     {% endblock content %}
 
 </body>
