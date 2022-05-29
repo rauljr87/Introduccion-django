@@ -7,6 +7,11 @@
 <body>
 Blog_list
 <br>
+<!-- Enlista modelos de la base de datos -->
+{%for post in posts%}
+{{post.title}}
+{%endfor%}
+<br>
 <a href="{% url 'blog:create' %}">Create</a>
 </body>
 </html>
