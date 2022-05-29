@@ -1,0 +1,18 @@
+<!-- TAILWIND  -->
+
+{% load tailwind_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base_tailwind</title>
+
+    {% tailwind_css %}
+</head>
+<body>
+<!-- Contiene toda la información y estructura de nuestra página web en general -->
+
+<!-- block - endblock, permite enviar información de forma dinámica a otros archivos HTML -->
+    {% block content %}{% endblock content %}
+
+</body>
+</html>

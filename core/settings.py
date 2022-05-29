@@ -53,7 +53,18 @@ INSTALLED_APPS = [
 
     'core',
     'blog',
+
+    'tailwind',
+    'theme',
 ]
+
+# https://django-tailwind.readthedocs.io/en/latest/installation.html
+TAILWIND_APP_NAME = 'theme'
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -66,6 +77,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'core.urls'
+
 
 # Para que la aplicación se vea más bonita, vistas
 TEMPLATES = [
