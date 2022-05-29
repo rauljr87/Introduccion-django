@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'theme',
 ]
 
+# https://django-tailwind.readthedocs.io/en/latest/installation.html
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
     "127.0.0.1",
