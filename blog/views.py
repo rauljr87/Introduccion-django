@@ -11,8 +11,11 @@ class BlogListView(View):
     """ Vista para blog_list """
 
     def get(self, request, *args, **kwargs):
+        # Llamando a todos los objetos POST que se encuentran en la base de datos
+        posts = Post.objects.all()
+        # Visualizar los objetos POST
         context = {
-
+            'posts':posts
         }
         return render(request, 'blog_list.html', context)
 
