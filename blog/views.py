@@ -24,14 +24,14 @@ class BlogCreateView(View):
     def get(self, request, *args, **kwargs):
         form = PostCreateForm()
         context = {
-            'form':form
+            'form': form
         }
         return render(request, 'blog_create.html', context)
 
     # Enviando información
     def post(self, request, *args, **kwargs):
         # Si el método es POST
-        if request.method=="POST":
+        if request.method == "POST":
             # Pedir el formulario
             form = PostCreateForm(request.POST)
             # Si el formulario es válido
@@ -43,8 +43,9 @@ class BlogCreateView(View):
                 # Crear POST
                 p, created = Post.objects.get_or_create(title=title, content=content)
                 p.save()
-                return redirect('blog:home')
 
+                # Redireccionando a la página blog_list
+                return redirect('blog:home')
 
         context = {
 
